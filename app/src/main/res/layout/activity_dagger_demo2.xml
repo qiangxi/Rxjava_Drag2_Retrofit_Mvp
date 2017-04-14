@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:id="@+id/activity_dagger_demo2"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,10 +9,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.qiangxi.rxjava_drag2_retrofit_mvp.dagger.DaggerDemoActivity">
-<TextView
-    android:id="@+id/textView"
-    android:layout_width="match_parent"
-    android:layout_height="55dp"
-    android:text="点击"/>
+    tools:context="com.qiangxi.rxjava_drag2_retrofit_mvp.dagger.DaggerDemoActivity2">
+
 </RelativeLayout>

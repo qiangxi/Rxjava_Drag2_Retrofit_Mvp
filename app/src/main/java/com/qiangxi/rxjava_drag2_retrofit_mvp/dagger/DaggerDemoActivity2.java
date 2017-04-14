@@ -1,11 +1,8 @@
 package com.qiangxi.rxjava_drag2_retrofit_mvp.dagger;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
 
 import com.qiangxi.rxjava_drag2_retrofit_mvp.R;
 import com.qiangxi.rxjava_drag2_retrofit_mvp.bean.CarInfo;
@@ -20,7 +17,7 @@ import com.qiangxi.rxjava_drag2_retrofit_mvp.dagger.module.UserInfoModule2;
 
 import javax.inject.Inject;
 
-public class DaggerDemoActivity extends AppCompatActivity {
+public class DaggerDemoActivity2 extends AppCompatActivity {
     @QualifierUserInfoA
     @Inject
     UserInfo mUserInfoA;
@@ -31,11 +28,10 @@ public class DaggerDemoActivity extends AppCompatActivity {
 
     @Inject
     CarInfo mCarInfo;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dagger_demo);
+        setContentView(R.layout.activity_dagger_demo2);
         UserInfoComponent2 component2 = DaggerUserInfoComponent2.builder().userInfoModule2(new UserInfoModule2()).build();
         DaggerUserInfoComponent.builder()
                 .userInfoComponent2(component2)
@@ -44,16 +40,7 @@ public class DaggerDemoActivity extends AppCompatActivity {
         mUserInfoA.setName("张三");
         mUserInfoA.setSex(0);
         mUserInfoB.setSex(23);
-        mCarInfo.setCarName("兰博基尼");
+        mCarInfo.setCarName("宝马");
         Log.e("tag", mUserInfoA.toString() + "\n" + mUserInfoB.toString() + "\n" + mCarInfo.toString());
-
-        TextView textView = (TextView) findViewById(R.id.textView);
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DaggerDemoActivity.this, DaggerDemoActivity2.class);
-                startActivity(intent);
-            }
-        });
     }
 }

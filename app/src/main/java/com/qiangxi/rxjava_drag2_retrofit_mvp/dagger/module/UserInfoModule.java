@@ -24,4 +24,5 @@ public class UserInfoModule {
     UserInfo provideUserInfoB() {
         return new UserInfo("李四");
     }
+
 }
