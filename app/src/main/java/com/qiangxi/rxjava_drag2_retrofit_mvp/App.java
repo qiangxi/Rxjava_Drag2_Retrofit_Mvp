@@ -2,6 +2,7 @@ package com.qiangxi.rxjava_drag2_retrofit_mvp;
 
 import android.app.Application;
 
+import com.orhanobut.logger.Logger;
 import com.qiangxi.rxjava_drag2_retrofit_mvp.dagger.component.DaggerUserInfoComponent;
 import com.qiangxi.rxjava_drag2_retrofit_mvp.dagger.component.DaggerUserInfoComponent2;
 import com.qiangxi.rxjava_drag2_retrofit_mvp.dagger.component.UserInfoComponent;
@@ -19,6 +20,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Logger.init("rqq");
         UserInfoComponent2 userInfoComponent2 = DaggerUserInfoComponent2.builder()
                 .userInfoModule2(new UserInfoModule2())
                 .build();
